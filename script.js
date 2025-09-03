@@ -15,6 +15,63 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
+// Funcionalidad de pestañas nórdicas para Stormvaldr Design Studio
+
+// Inicializar cuando el DOM esté cargado
+document.addEventListener('DOMContentLoaded', function() {
+    initializeTabs();
+    addScrollEffects();
+    addFormValidation();
+});
+
+// Función principal para inicializar las pestañas
+function initializeTabs() {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    // Mostrar la primera pestaña por defecto
+    if (tabButtons.length > 0 && tabContents.length > 0) {
+        tabButtons[0].classList.add('active');
+        tabContents[0].classList.add('active');
+    }
+    
+    // Agregar event listeners a los botones de pestañas
+    tabButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            switchTab(index, tabButtons, tabContents);
+        });
+    });
+}
+
+// Función para cambiar entre pestañas
+function switchTab(targetIndex, tabButtons, tabContents) {
+    // Remover clase active de todos los botones y contenidos
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    tabContents.forEach(content => content.classList.remove('active'));
+    
+    // Agregar clase active al botón y contenido seleccionado
+    tabButtons[targetIndex].classList.add('active');
+    tabContents[targetIndex].classList.add('active');
+    
+    // Scroll suave hacia el contenido
+    tabContents[targetIndex].scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+    
+    // Efecto de vibración nórdica
+    addNordicEffect(tabButtons[targetIndex]);
+}
+
+// Efecto visual nórdico para los botones
+function addNordicEffect(element) {
+    element.style.transform = 'translateY(-2px) scale(1.05)';
+    
+    setTimeout(() => {
+        element.style.transform = 'translateY(-2px)';
+    }, 200);
+}
+
 // Navegación suave
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -75,44 +132,52 @@ filterButtons.forEach(button => {
     });
 });
 
-// Formulario de contacto
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+// Formulario de contacto - Manejo seguro
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm') || document.querySelector('.contact-form form');
     
-    // Obtener datos del formulario
-    const formData = new FormData(this);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const service = formData.get('service');
-    const message = formData.get('message');
-    
-    // Validación básica
-    if (!name || !email || !service || !message) {
-        showNotification('Por favor, completa todos los campos.', 'error');
-        return;
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener datos del formulario
+            const formData = new FormData(this);
+            const name = formData.get('name') || formData.get('nombre');
+            const email = formData.get('email');
+            const service = formData.get('service') || formData.get('proyecto');
+            const message = formData.get('message') || formData.get('mensaje');
+            
+            // Validación básica
+            if (!name || !email || !message) {
+                showNotification('Por favor, completa todos los campos requeridos.', 'error');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showNotification('Por favor, ingresa un email válido.', 'error');
+                return;
+            }
+            
+            // Simular envío del formulario
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn ? submitBtn.textContent : '';
+            
+            if (submitBtn) {
+                submitBtn.textContent = 'Enviando...';
+                submitBtn.disabled = true;
+            }
+            
+            // Simular delay de envío
+            setTimeout(() => {
+                showNotification('¡Mensaje enviado correctamente! Los maestros de Stormvaldr te contactarán pronto.', 'success');
+                this.reset();
+                if (submitBtn) {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
+            }, 2000);
+        });
     }
-    
-    if (!isValidEmail(email)) {
-        showNotification('Por favor, ingresa un email válido.', 'error');
-        return;
-    }
-    
-    // Simular envío del formulario
-    const submitBtn = this.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    
-    submitBtn.textContent = 'Enviando...';
-    submitBtn.disabled = true;
-    
-    // Simular delay de envío
-    setTimeout(() => {
-        showNotification('¡Mensaje enviado correctamente! Te contactaré pronto.', 'success');
-        contactForm.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 2000);
 });
 
 // Función para validar email
@@ -199,6 +264,151 @@ function showNotification(message, type = 'info') {
         if (notification.parentNode) {
             notification.style.transform = 'translateX(100%)';
             setTimeout(() => notification.remove(), 300);
+        }
+    }, 5000);
+}
+
+// Efectos de scroll para animaciones
+function addScrollEffects() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Observar elementos animables
+    const animatedElements = document.querySelectorAll(
+        '.service-card, .portfolio-item, .pricing-card, .contact-item'
+    );
+    
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+}
+
+// Validación del formulario de contacto
+function addFormValidation() {
+    // Buscar el formulario de contacto con diferentes selectores
+    const contactForm = document.querySelector('.contact-form form') || 
+                       document.querySelector('form') || 
+                       document.querySelector('#contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const formObject = {};
+            
+            // Convertir FormData a objeto
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+            
+            // Validar campos requeridos
+            if (validateForm(formObject)) {
+                showSuccessMessage();
+                this.reset();
+            } else {
+                showErrorMessage();
+            }
+        });
+    }
+}
+
+// Función de validación
+function validateForm(data) {
+    const requiredFields = ['nombre', 'email', 'mensaje'];
+    
+    for (let field of requiredFields) {
+        if (!data[field] || data[field].trim() === '') {
+            return false;
+        }
+    }
+    
+    // Validar email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+        return false;
+    }
+    
+    return true;
+}
+
+// Mostrar mensaje de éxito
+function showSuccessMessage() {
+    showNotificationNordic(
+        '¡Mensaje enviado con éxito! Los maestros de Stormvaldr te contactarán pronto.',
+        'success'
+    );
+}
+
+// Mostrar mensaje de error
+function showErrorMessage() {
+    showNotificationNordic(
+        'Por favor, completa todos los campos requeridos correctamente.',
+        'error'
+    );
+}
+
+// Sistema de notificaciones nórdicas
+function showNotificationNordic(message, type) {
+    // Remover notificación existente
+    const existingNotification = document.querySelector('.nordic-notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    // Crear nueva notificación
+    const notification = document.createElement('div');
+    notification.className = `nordic-notification ${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-triangle'}"></i>
+            <span>${message}</span>
+            <button class="notification-close" onclick="this.parentElement.parentElement.remove()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    `;
+    
+    // Estilos de la notificación
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'success' ? 'linear-gradient(45deg, #81c784, #64b5f6)' : 'linear-gradient(45deg, #f44336, #ff9800)'};
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        z-index: 10000;
+        animation: slideInRight 0.5s ease;
+        max-width: 400px;
+        font-weight: 600;
+    `;
+    
+    // Agregar al DOM
+    document.body.appendChild(notification);
+    
+    // Auto-remover después de 5 segundos
+    setTimeout(() => {
+        if (notification.parentElement) {
+            notification.style.animation = 'slideOutRight 0.5s ease';
+            setTimeout(() => {
+                notification.remove();
+            }, 500);
         }
     }, 5000);
 }

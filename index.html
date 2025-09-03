@@ -40,232 +40,406 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-container">
+    <section class="hero">
+        <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Forjamos Diseños con la Fuerza del Norte</h1>
-                <p class="hero-subtitle">Stormvaldr Design Studio combina la elegancia escandinava con la innovación moderna. Creamos experiencias visuales poderosas que conquistan mercados.</p>
-                <div class="hero-buttons">
-                    <a href="#servicios" class="btn btn-primary">Ver Servicios</a>
-                    <a href="#portafolio" class="btn btn-secondary">Mi Trabajo</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="hero-graphic">
-                    <i class="fas fa-palette"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Servicios -->
-    <section id="servicios" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Servicios de Elite</h2>
-                <p class="section-subtitle">Stormvaldr forja soluciones de diseño premium que dominan el mercado con elegancia nórdica</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3 class="service-title">Identidad Visual</h3>
-                    <p class="service-description">Creamos identidades de marca poderosas inspiradas en la fuerza y elegancia de la tradición nórdica.</p>
-                    <ul class="service-features">
-                        <li>Diseño de logotipos</li>
-                        <li>Identidad corporativa</li>
-                        <li>Material publicitario</li>
-                        <li>Diseño editorial</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3 class="service-title">Diseño Web Nórdico</h3>
-                    <p class="service-description">Forjamos sitios web con la elegancia minimalista escandinava y la funcionalidad moderna que conquista usuarios.</p>
-                    <ul class="service-features">
-                        <li>Sitios web responsivos</li>
-                        <li>Tiendas online</li>
-                        <li>Optimización SEO</li>
-                        <li>Mantenimiento web</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3 class="service-title">Branding Premium</h3>
-                    <p class="service-description">Forjamos marcas legendarias que resisten el tiempo, combinando tradición nórdica con innovación contemporánea.</p>
-                    <ul class="service-features">
-                        <li>Diseño de interfaces</li>
-                        <li>Prototipado</li>
-                        <li>Experiencia de usuario</li>
-                        <li>Diseño móvil</li>
-                    </ul>
+                <h1 class="hero-title">⚡ Stormvaldr Design Studio ⚡</h1>
+                <p class="hero-subtitle">Forjando diseños legendarios con la fuerza del norte</p>
+                <p class="hero-description">Donde las runas ancestrales se encuentran con el diseño moderno</p>
+                
+                <!-- Tab Navigation -->
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="servicios">
+                        <i class="fas fa-hammer"></i>
+                        <span>Servicios</span>
+                    </button>
+                    <button class="tab-btn" data-tab="portafolio">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Portafolio</span>
+                    </button>
+                    <button class="tab-btn" data-tab="precios">
+                        <i class="fas fa-coins"></i>
+                        <span>Precios</span>
+                    </button>
+                    <button class="tab-btn" data-tab="acerca">
+                        <i class="fas fa-mountain"></i>
+                        <span>Acerca de</span>
+                    </button>
+                    <button class="tab-btn" data-tab="contacto">
+                        <i class="fas fa-raven"></i>
+                        <span>Contacto</span>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portafolio -->
-    <section id="portafolio" class="portfolio">
+    <!-- Tab Content Container -->
+    <div class="tab-content-container">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Mi Portafolio</h2>
-                <p class="section-subtitle">Algunos de mis trabajos más recientes</p>
-            </div>
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="graphic">Diseño Gráfico</button>
-                <button class="filter-btn" data-filter="web">Desarrollo Web</button>
-                <button class="filter-btn" data-filter="ui">UI/UX</button>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="graphic">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">
-                            <i class="fas fa-image"></i>
-                            <p>Diseño de Logotipo</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Identidad Corporativa</h3>
-                        <p>Diseño completo de marca para empresa tecnológica</p>
-                    </div>
+            
+            <!-- Servicios Tab -->
+            <div class="tab-content active" id="servicios">
+                <div class="section-header">
+                    <h2 class="section-title">🔨 Servicios de la Forja Nórdica</h2>
+                    <p class="section-subtitle">Forjamos soluciones digitales con la precisión de los maestros herreros vikingos</p>
                 </div>
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">
-                            <i class="fas fa-laptop"></i>
-                            <p>Sitio Web Corporativo</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="service-title">⚔️ Diseño Web Nórdico</h3>
+                        <p class="service-description">Sitios web con la elegancia minimalista escandinava y funcionalidad moderna que conquista mercados digitales.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">Responsive</span>
+                            <span class="feature-tag">SEO Optimizado</span>
+                            <span class="feature-tag">Velocidad Óptima</span>
                         </div>
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Página Web Empresarial</h3>
-                        <p>Desarrollo web responsivo con CMS personalizado</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="ui">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">
-                            <i class="fas fa-mobile-alt"></i>
-                            <p>App Móvil</p>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="service-title">🛡️ Identidad Visual</h3>
+                        <p class="service-description">Marcas poderosas inspiradas en runas y símbolos nórdicos, diseñadas para resistir el paso del tiempo.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">Logo Design</span>
+                            <span class="feature-tag">Paleta de Colores</span>
+                            <span class="feature-tag">Tipografía</span>
                         </div>
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Diseño de App</h3>
-                        <p>Interfaz y experiencia de usuario para aplicación móvil</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="graphic">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">
-                            <i class="fas fa-palette"></i>
-                            <p>Material Publicitario</p>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-crown"></i>
                         </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Campaña Publicitaria</h3>
-                        <p>Diseño de material promocional para evento</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">
-                            <i class="fas fa-shopping-cart"></i>
-                            <p>E-commerce</p>
+                        <h3 class="service-title">👑 Branding Premium</h3>
+                        <p class="service-description">Marcas legendarias que trascienden tendencias, forjadas con la sabiduría ancestral de las sagas nórdicas.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">Estrategia de Marca</span>
+                            <span class="feature-tag">Manual de Identidad</span>
+                            <span class="feature-tag">Aplicaciones</span>
                         </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Tienda Online</h3>
-                        <p>Desarrollo de e-commerce con pasarela de pagos</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="ui">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">
-                            <i class="fas fa-desktop"></i>
-                            <p>Dashboard</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Panel de Control</h3>
-                        <p>Diseño de interfaz para sistema de gestión</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Forja tu Proyecto</h2>
-                <p class="section-subtitle">¿Listo para crear algo legendario? Stormvaldr está aquí para forjar tu visión</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <p>forge@stormvaldr.studio</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Teléfono</h3>
-                            <p>+1 (555) STORM-01</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Ubicación</h3>
-                            <p>Design Forge, Nordic Quarter</p>
+            <!-- Portafolio Tab -->
+            <div class="tab-content" id="portafolio">
+                <div class="section-header">
+                    <h2 class="section-title">🛡️ Sagas de Diseño Legendarias</h2>
+                    <p class="section-subtitle">Proyectos forjados en las llamas de la creatividad nórdica</p>
+                </div>
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">🌟 Todas las Sagas</button>
+                    <button class="filter-btn" data-filter="web">⚔️ Web Nórdico</button>
+                    <button class="filter-btn" data-filter="branding">👑 Branding Real</button>
+                    <button class="filter-btn" data-filter="visual">🎨 Arte Visual</button>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <h3 class="portfolio-title">⚡ Mjolnir Tech</h3>
+                                <p>Plataforma de desarrollo con poder nórdico</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">React</span>
+                                    <span class="tag">Node.js</span>
+                                    <span class="tag">MongoDB</span>
+                                </div>
+                                <a href="#" class="portfolio-link">Ver Saga</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <div class="portfolio-item" data-category="branding">
+                        <div class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <h3 class="portfolio-title">🐺 Fenrir Fitness</h3>
+                                <p>Identidad de marca para gimnasio premium</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">Logo</span>
+                                    <span class="tag">Branding</span>
+                                    <span class="tag">Web</span>
+                                </div>
+                                <a href="#" class="portfolio-link">Ver Saga</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <h3 class="portfolio-title">🌲 Yggdrasil Eco</h3>
+                                <p>E-commerce sostenible con alma nórdica</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">E-commerce</span>
+                                    <span class="tag">Shopify</span>
+                                    <span class="tag">UX/UI</span>
+                                </div>
+                                <a href="#" class="portfolio-link">Ver Saga</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="visual">
+                        <div class="portfolio-image">
+                            <div class="portfolio-overlay">
+                                <h3 class="portfolio-title">🔥 Loki Creative</h3>
+                                <p>Campaña visual para agencia creativa</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">Ilustración</span>
+                                    <span class="tag">Print</span>
+                                    <span class="tag">Digital</span>
+                                </div>
+                                <a href="#" class="portfolio-link">Ver Saga</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Tu email" required>
-                    </div>
-                    <div class="form-group">
-                        <select id="service" name="service" required>
-                            <option value="">Selecciona un servicio</option>
-                            <option value="graphic">Diseño Gráfico</option>
-                            <option value="web">Desarrollo Web</option>
-                            <option value="ui">Diseño UI/UX</option>
-                            <option value="other">Otro</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Cuéntame sobre tu proyecto" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">Enviar Mensaje</button>
-                </form>
             </div>
+
+            <!-- Precios Tab -->
+            <div class="tab-content" id="precios">
+                <div class="section-header">
+                    <h2 class="section-title">💰 Tesoros de la Forja Nórdica</h2>
+                    <p class="section-subtitle">Paquetes de diseño forjados para conquistar cualquier mercado</p>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card basic">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">⚔️ Guerrero</h3>
+                            <p class="pricing-subtitle">Para emprendedores valientes</p>
+                        </div>
+                        <div class="pricing-price">
+                            <span class="currency">$</span>
+                            <span class="amount">299</span>
+                            <span class="period">USD</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✓ Logo profesional + 2 variaciones</li>
+                            <li>✓ Paleta de colores nórdica</li>
+                            <li>✓ Tipografía personalizada</li>
+                            <li>✓ Tarjetas de presentación</li>
+                            <li>✓ 3 revisiones incluidas</li>
+                            <li>✓ Entrega en 5 días</li>
+                        </ul>
+                        <button class="pricing-btn">Forjar Identidad</button>
+                    </div>
+                    
+                    <div class="pricing-card premium featured">
+                        <div class="pricing-badge">🏆 Más Popular</div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">👑 Jarl</h3>
+                            <p class="pricing-subtitle">Para líderes de mercado</p>
+                        </div>
+                        <div class="pricing-price">
+                            <span class="currency">$</span>
+                            <span class="amount">799</span>
+                            <span class="period">USD</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✓ Todo del paquete Guerrero</li>
+                            <li>✓ Sitio web responsivo (5 páginas)</li>
+                            <li>✓ Optimización SEO básica</li>
+                            <li>✓ Integración redes sociales</li>
+                            <li>✓ Formulario de contacto</li>
+                            <li>✓ Hosting gratuito 1 año</li>
+                            <li>✓ 5 revisiones incluidas</li>
+                            <li>✓ Entrega en 10 días</li>
+                        </ul>
+                        <button class="pricing-btn">Conquistar Digital</button>
+                    </div>
+                    
+                    <div class="pricing-card enterprise">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">⚡ Rey Nórdico</h3>
+                            <p class="pricing-subtitle">Para imperios digitales</p>
+                        </div>
+                        <div class="pricing-price">
+                            <span class="currency">$</span>
+                            <span class="amount">1,999</span>
+                            <span class="period">USD</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✓ Todo del paquete Jarl</li>
+                            <li>✓ E-commerce completo</li>
+                            <li>✓ Panel de administración</li>
+                            <li>✓ Integración pasarelas de pago</li>
+                            <li>✓ Sistema de inventario</li>
+                            <li>✓ Analytics avanzado</li>
+                            <li>✓ Soporte 3 meses</li>
+                            <li>✓ Revisiones ilimitadas</li>
+                            <li>✓ Entrega en 20 días</li>
+                        </ul>
+                        <button class="pricing-btn">Dominar Imperio</button>
+                    </div>
+                </div>
+                
+                <div class="pricing-extras">
+                    <h3>🔥 Servicios Adicionales de la Forja</h3>
+                    <div class="extras-grid">
+                        <div class="extra-item">
+                            <h4>🛡️ Mantenimiento Web</h4>
+                            <p>$99/mes - Actualizaciones y seguridad</p>
+                        </div>
+                        <div class="extra-item">
+                            <h4>📱 App Móvil</h4>
+                            <p>$1,299 - Aplicación nativa iOS/Android</p>
+                        </div>
+                        <div class="extra-item">
+                            <h4>🎨 Sesión de Fotos</h4>
+                            <p>$399 - Fotografía profesional de producto</p>
+                        </div>
+                        <div class="extra-item">
+                            <h4>📊 Marketing Digital</h4>
+                            <p>$599/mes - Gestión de redes y publicidad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acerca de Tab -->
+            <div class="tab-content" id="acerca">
+                <div class="section-header">
+                    <h2 class="section-title">🏔️ La Saga de Stormvaldr</h2>
+                    <p class="section-subtitle">Donde nació la leyenda del diseño nórdico</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-story">
+                        <h3>🌩️ El Origen de la Tormenta</h3>
+                        <p>En las tierras heladas del norte, donde los vientos susurran secretos ancestrales y las auroras boreales danzan en el cielo, nació Stormvaldr Design Studio. Nuestro nombre evoca la fuerza de las tormentas nórdicas y la sabiduría de los antiguos maestros artesanos.</p>
+                        
+                        <h3>⚒️ La Filosofía de la Forja</h3>
+                        <p>Como los legendarios herreros vikingos que forjaban armas capaces de cortar el hielo más duro, nosotros forjamos diseños que trascienden el tiempo. Cada proyecto es una saga única, creada con la precisión de las runas y la belleza de los fiordos escandinavos.</p>
+                        
+                        <h3>🔥 El Fuego Creativo</h3>
+                        <p>Nuestro estudio combina la elegancia minimalista escandinava con la innovación tecnológica moderna. Creemos que el buen diseño, como las sagas nórdicas, debe ser poderoso, duradero, elegante y funcional.</p>
+                    </div>
+                    
+                    <div class="about-values">
+                        <h3>🛡️ Los Pilares de Stormvaldr</h3>
+                        <div class="values-grid">
+                            <div class="value-item">
+                                <i class="fas fa-mountain"></i>
+                                <h4>Fortaleza</h4>
+                                <p>Diseños sólidos como las montañas nórdicas</p>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-snowflake"></i>
+                                <h4>Pureza</h4>
+                                <p>Simplicidad elegante y funcional</p>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-fire"></i>
+                                <h4>Pasión</h4>
+                                <p>Cada proyecto forjado con dedicación</p>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-compass"></i>
+                                <h4>Visión</h4>
+                                <p>Navegamos hacia el futuro del diseño</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Contacto Tab -->
+            <div class="tab-content" id="contacto">
+                <div class="section-header">
+                    <h2 class="section-title">🔥 Forja tu Proyecto Legendario</h2>
+                    <p class="section-subtitle">¿Listo para crear algo épico? Los maestros de Stormvaldr están aquí para forjar tu visión</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-form">
+                        <h3>📜 Envía tu Mensaje</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">🏷️ Nombre del Guerrero</label>
+                                <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">📧 Correo del Cuervo</label>
+                                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="project">⚔️ Tipo de Proyecto</label>
+                                <select id="project" name="project" required>
+                                    <option value="">Selecciona tu saga...</option>
+                                    <option value="web">🌐 Sitio Web Nórdico</option>
+                                    <option value="branding">👑 Identidad de Marca</option>
+                                    <option value="ecommerce">🛒 E-commerce Vikingo</option>
+                                    <option value="app">📱 Aplicación Móvil</option>
+                                    <option value="other">🔮 Otro Proyecto Épico</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">💰 Presupuesto Estimado</label>
+                                <select id="budget" name="budget" required>
+                                    <option value="">Selecciona tu tesoro...</option>
+                                    <option value="guerrero">⚔️ Guerrero ($299 - $500)</option>
+                                    <option value="jarl">👑 Jarl ($500 - $1,000)</option>
+                                    <option value="rey">⚡ Rey Nórdico ($1,000+)</option>
+                                    <option value="custom">🔥 Proyecto Personalizado</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">📝 Tu Visión Épica</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Cuéntanos sobre tu proyecto legendario..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">🚀 Forjar Proyecto</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>🏰 La Forja de Stormvaldr</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>📧 Correo del Cuervo</h4>
+                                <p>forge@stormvaldr.studio</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>📞 Cuerno de Guerra</h4>
+                                <p>+1 (555) STORM-01</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>🗺️ Ubicación de la Forja</h4>
+                                <p>Design Forge, Nordic Quarter</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-hours">
+                            <h4>⏰ Horarios de la Forja</h4>
+                            <p>Lun - Vie: 9:00 AM - 6:00 PM (GMT-5)</p>
+                            <p>Sáb: 10:00 AM - 2:00 PM</p>
+                            <p>Dom: Descanso del guerrero</p>
+                        </div>
+                        
+                        <div class="contact-social">
+                            <h4>🌐 Síguenos en las Sagas Digitales</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
+                                <a href="#" class="social-link"><i class="fab fa-behance"></i> Behance</a>
+                                <a href="#" class="social-link"><i class="fab fa-dribbble"></i> Dribbble</a>
+                                <a href="#" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
