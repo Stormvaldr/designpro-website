@@ -72,17 +72,47 @@ function addNordicEffect(element) {
     }, 200);
 }
 
-// Navegación suave
+// Navegación sincronizada entre header y pestañas
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 70; // Ajuste para la navbar fija
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+        const targetId = this.getAttribute('href').substring(1);
+        
+        // Mapear enlaces del header a índices de pestañas
+        const tabMapping = {
+            'inicio': 0,
+            'servicios': 0,
+            'portafolio': 1,
+            'precios': 2,
+            'acerca': 3,
+            'contacto': 4
+        };
+        
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        if (tabMapping.hasOwnProperty(targetId) && tabButtons.length > 0) {
+            // Activar la pestaña correspondiente
+            const targetIndex = tabMapping[targetId];
+            switchTab(targetIndex, tabButtons, tabContents);
+            
+            // Scroll suave al hero section
+            const heroSection = document.querySelector('.hero');
+            if (heroSection) {
+                heroSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        } else {
+            // Fallback para otros enlaces
+            const target = document.querySelector('#' + targetId);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
     });
 });
